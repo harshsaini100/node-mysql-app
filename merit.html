@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+
+    <title>Merit List</title>
+</head>
+
+<body class="body">
+
+    <h1 class="text-center mt-4">Merit List</h1>
+    <div class="container mt-4">
+        <div class="row">
+            <select name="" id="mSelect" class="col-md-4">
+                <option value="12th">12th</option>
+                <option value="10th">10th</option>
+            </select>
+            <button type="button" class="btn btn-info col-md-2 ms-3" value="70" onclick="getMerit(70,90)">Marks >70%</button>
+            <button type="button" class="btn btn-info col-md-2 ms-3" value="90" onclick="getMerit(90,100)">Marks >90%</button>
+            <button type="button" class="btn btn-info col-md-2 ms-3" value="60" onclick="getMerit(0,70)">Marks less than 70% </button>
+
+        </div>
+    </div>
+    <div class="container mt-5 text-center">
+        <div id="box">
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">FirstName</th>
+                        <th scope="col">LastName</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Class</th>
+                        <th scope="col">Marks</th>
+                        
+                    </tr>
+                </thead>
+                <tbody id="tbody">
+
+                </tbody>
+            </table>
+
+        </div>
+        <p id="noResult" class=""></p>
+    </div>
+    <!-- <div class="container mt-4">
+        <a href="form" class="btn btn-primary" id="toForm">Add User</a>
+       
+    </div> -->
+
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.7.0.js"
+        integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+
+    <script src="/merit.js"></script>
+
+    <script>
+        window.onload = function () {
+            
+
+        };
+
+    </script>
+
+</body>
+
+</html>

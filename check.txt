@@ -1,0 +1,32 @@
+
+
+
+Equal numbers of recored as presnt in db                         More than presnt in DB                             Less than present in DB
+
+
+
+
+
+check the no of record coming for update and store their ids
+
+get the record presnt in db and their ids
+
+if incoming are more than in db 
+            
+    store records which have same ids as db ids - these are alredy prestn in db
+    store records which have different ids than in db in a different container - not present in db
+
+        then 
+          use update query for the ones that are presnt in db and update
+          use insert query to insert into db
+
+
+if incoming are less than in db
+    
+    store record which have same ids as in db
+       then
+        use update query to update with matching ids
+        use delete query to delete the ones which do not match the query
+
+
+

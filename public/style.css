@@ -1,0 +1,49 @@
+body{
+    background: #67B26F;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #4ca2cd, #67B26F);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #4ca2cd, #67B26F); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+    
+}
+h1{
+    color: white !important;
+    font-size:40px !important;
+    font-weight: bold  !important;
+}
+
+#box *{
+    background-color: transparent !important;
+    color: white !important;
+}
+
+p{
+    color: white;
+}
+
+
+
+::placeholder {
+    color: rgb(186, 183, 183) !important;
+    opacity: 0.2; /* Firefox */
+  }
+  
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color: red;
+  }
+  
+  ::-ms-input-placeholder { /* Microsoft Edge */
+   color: red;
+  }
+
+  #myform *{
+    background-color: transparent;
+    color: white;
+  }
+ #form_2 *{
+    background-color: transparent;
+    color: white;
+ }
+
+ select *{
+    color: black !important;
+ }

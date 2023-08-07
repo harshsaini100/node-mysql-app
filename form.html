@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+
+    <!-- JQUERY DATEPICKER -->
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+
+
+
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container text-center mt-3">
+        <h1>FORM</h1>
+    </div>
+    <div class="container mt-5 main">
+        <form id="myform" class="container">
+            <div class="row">
+                <div class="form-group col-md-6">
+                    <label for="fName">First Name</label>
+                    <input type="text" class="form-control" id="fName" oninput="onChange(this)">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="lName">Last Name</label>
+                    <input type="text" class="form-control" id="lName" oninput="onChange(this)">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email" oninput="onChange(this)">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="bDay">DOB</label>
+                    <input type="text" value="DOB" class="form-control" id="bDay" oninput="onChange(this)" readonly>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="class">Class</label>
+                    <select name="class" id="class" class="form-control" oninput="onChange(this)">
+                        <option value="10th">10th</option>
+                        <option value="11th">11th</option>
+                        <option value="12th">12th</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="pWord">Password</label>
+                    <input type="password" class="form-control" id="pWord" oninput="onChange(this)">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="radio">Enable</label>
+                    <div class="form-control" id="radio" required>
+                        <input type="radio" id="yes" name="enable" value="Yes" checked="checked">
+                        <label for="yes">Yes</label>
+                        <input type="radio" id="no" name="enable" value="No">
+                        <label for="no">No</label>
+                    </div>
+                </div>
+
+        </form>
+
+
+
+        <!-- <div class="col-12 mt-2">
+            <button type="button" onclick="saveData()" class="btn btn-primary form-control" id="btn">Submit</button>
+        </div> -->
+
+
+    </div>
+
+    <input type="hidden" id="hidden" value="">
+    </div>
+
+    <div class="container mt-3 mb-3">
+        <table class="table" id="form_2">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Course</th>
+                    <th scope="col">Stream</th>
+                    <th scope="col">Passing Year</th>
+                    <th scope="col">Marks in %</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody id="tbody_2">
+
+            </tbody>
+        </table>
+        <button type="button" class="btn btn-secondary" onclick="addField()">Add Education</button>
+    </div>
+
+    <div class=" container col-12 mt-2 mb-4">
+        <button type="button" onclick="saveData()" class="btn btn-primary form-control container"
+            id="btn">Submit</button>
+    </div>
+
+    <div class="container text-center mt-5 mb-5">
+        <ul id="error" style="list-style-type: none;"></ul>
+        <p id="eduError"></p>
+        <ul id="er_ul" style="list-style-type: none;"></ul>
+    </div>
+
+
+
+    <script src="/script.js"></script>
+    <script src="/edu.js"></script>
+
+
+    <script>
+
+
+
+        window.onload = function () {
+
+            const params = new Proxy(new URLSearchParams(window.location.search), {
+                get: (searchParams, prop) => searchParams.get(prop),
+            });
+            // Get the value of "some_key" in eg "https://example.com/?some_key=some_value"
+            let value = params.id; // "some_value"
+
+            editData(value)
+
+        }
+
+        let d = new Date()
+        let mxYear = d.getFullYear() - 10
+        console.log(mxYear);
+
+        $(function () {
+            $("#bDay").datepicker({
+                yearRange: `1900:${mxYear}`,
+                // maxDate: `-${day}D -11M -9Y`,
+                changeMonth: true,
+                changeYear: true
+
+            });
+        });
+
+    </script>
+
+
+</body>
+
+</html>

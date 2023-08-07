@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+      
+    <title>Ajax</title>
+</head>
+
+<body class="body">
+    <h1 class="text-center mt-4">Users</h1>
+
+    <div class="input-group container mt-4">
+        <div class="form-outline">
+          <input type="search" id="search" class="form-control" oninput="buttonState(this)" placeholder="Search User"/>
+        </div>
+        </div>
+    
+        <div class="container">
+            <a href="merit" class="btn btn-info mt-4">Merit List</a>
+        </div>
+
+    <div class="container mt-5 text-center">
+        <div id="box">
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">FirstName</th>
+                        <th scope="col">LastName</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Class</th>
+                        <th scope="col">DOB</th>
+                        <th scope="col">Enable</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody">
+
+                </tbody>
+            </table>
+            
+        </div>
+        <p id="noResult" class=""></p>
+    </div>
+    <div class="container mt-4">
+        <a href="form" class="btn btn-primary" id="toForm">Add User</a>
+        <!-- <button type="button" class="btn btn-primary"  onclick="formPage()">Add User</button> -->
+    </div>
+
+    <div class="pagination-container container mt-5 text-center d-flex align-items-center justify-content-center" aria-label="Page navigation example" style="position: absolute; top: 80%">
+    
+        <ul class="pagination" id="pagination" >
+
+        </ul>
+
+  </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.7.0.js"
+        integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+
+    <script src="/script.js"></script>
+
+    <script>
+        window.onload = function () {
+
+            let currentPage = 1;
+
+            const params = new Proxy(new URLSearchParams(window.location.search), {
+                get: (searchParams, prop) => searchParams.get(prop),
+            });
+            // Get the value of "some_key" in eg "https://example.com/?some_key=some_value"
+            let value = params.id; // "some_value"
+            if(value === null){
+                currentPage = 1
+            }else{
+                currentPage  = value;
+            }
+            
+            getData(currentPage);
+
+        };
+   
+    </script>
+
+</body>
+
+</html>
